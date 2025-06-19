@@ -4,28 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>John Zaccaria | Motion & Graphic Designer</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Mobile fallback: hide video and show background image */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #hero {
+      max-width: 640px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+    #hero video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Show fallback image on small screens */
     @media (max-width: 768px) {
       #hero video {
         display: none;
       }
       #hero {
         background: url('fallback.jpg') center center / cover no-repeat;
+        height: 360px; /* match video height */
       }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>John Zaccaria</h1>
-    <nav>
-      <a href="#portfolio">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
   <section id="hero">
-    <video
+    <video autoplay muted loop playsinline poster="fallback.jpg" controls>
+      <source src="your-motion-reel.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <h2>Design in Motion</h2>
+  </section>
+
+  <section>
+    <h3>About Me</h3>
+    <p>I’m a motion and graphic designer specializing in storytelling through animation and visual identity.</p>
+  </section>
+
+</body>
+</html>
