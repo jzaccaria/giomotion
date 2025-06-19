@@ -4,51 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>John Zaccaria | Motion & Graphic Designer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    #hero {
-      max-width: 640px;
-      margin: 0 auto 40px;
-      position: relative;
-    }
-    #hero video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    /* Show fallback image on small screens */
-    @media (max-width: 768px) {
-      #hero video {
-        display: none;
-      }
-      #hero {
-        background: url('fallback.jpg') center center / cover no-repeat;
-        height: 360px; /* match video height */
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
     <h1>John Zaccaria</h1>
+    <nav>
+      <a href="#portfolio">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <section id="hero">
-    <video autoplay muted loop playsinline poster="fallback.jpg" controls>
+    <video autoplay muted loop playsinline poster="fallback.jpg" id="motionReel">
       <source src="your-motion-reel.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <h2>Design in Motion</h2>
   </section>
 
-  <section>
-    <h3>About Me</h3>
-    <p>I’m a motion and graphic designer specializing in storytelling through animation and visual identity.</p>
+  <section id="portfolio">
+    <h3>Selected Work</h3>
+    <div class="gallery">
+      <img src="thumb1.jpg" alt="Project 1" />
+      <img src="thumb2.jpg" alt="Project 2" />
+      <img src="thumb3.jpg" alt="Project 3" />
+      <img src="thumb4.jpg" alt="Project 4" />
+      <img src="thumb5.jpg" alt="Project 5" />
+      <img src="thumb6.jpg" alt="Project 6" />
+      <img src="thumb7.jpg" alt="Project 7" />
+      <img src="thumb8.jpg" alt="Project 8" />
+      <img src="thumb9.jpg" alt="Project 9" />
+      <img src="thumb10.jpg" alt="Project 10" />
+    </div>
   </section>
 
+  <section id="about">
+    <h3>About Me</h3>
+    <p>
+      I’m a motion and graphic designer specializing in storytelling through animation and visual
+      identity. I use tools like After Effects, Illustrator, Photoshop, and Blender to bring ideas
+      to life. With over 10 years of experience, I create visuals that resonate and move.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <p>
+      Follow me:
+      <a href="#">Instagram</a> |
+      <a href="#">Behance</a> |
+      <a href="#">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 John Zaccaria</p>
+  </footer>
 </body>
 </html>
