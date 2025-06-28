@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Giovanni Zaccaria – Motion Design Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>John Zaccaria | Motion & Graphic Designer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>John<br>Zaccaria</h1>
+    <h1>John Zaccaria</h1>
     <nav>
-      <a href="#work">Work</a>
+      <a href="#portfolio">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -18,50 +18,110 @@
 
   <section id="hero">
     <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/euPl3EGlSqs?autoplay=1&mute=1&controls=1&playsinline=1&rel=0&showinfo=0&modestbranding=1"
-        title="Hero Video"
-        frameborder="0"
+      <iframe
+        src="https://www.youtube.com/embed/euPl3EGlSqs?autoplay=1&mute=1&controls=1&playsinline=1&rel=0"
+        title="Motion Design Reel"
         allow="autoplay; encrypted-media"
         allowfullscreen
       ></iframe>
     </div>
   </section>
 
-  <section id="work">
+  <section id="portfolio">
     <h3>Selected Work</h3>
     <div class="gallery">
-      <a href="https://www.behance.net/gallery/197911171/Aventura-Product-Modeling" class="gallery-item">
+
+      <!-- Aventura thumbnail triggers modal -->
+      <div class="gallery-item" onclick="openModal();currentSlide(1)">
         <img src="Thumbnail__Aventura_3D.jpg" alt="Aventura Product Modeling" />
-      </a>
-      <a href="https://www.behance.net/gallery/197902701/Belmont-Stakes-Racing-Festival-Promo" class="gallery-item">
-        <img src="Thumbnail__Belmont_Stakes.jpg" alt="Belmont Stakes Racing Festival Promo" />
-      </a>
-      <a href="https://www.behance.net/gallery/197896901/Ensora-Health-Explainer" class="gallery-item">
-        <img src="Thumbnail__Ensora_Explainer.jpg" alt="Ensora Health Explainer" />
-      </a>
-      <a href="https://www.behance.net/gallery/197907469/Excedrin-3D-Model" class="gallery-item">
-        <img src="Thumbnail__Excedrin.jpg" alt="Excedrin 3D Model" />
-      </a>
-      <a href="https://www.behance.net/gallery/197893601/Italian-Thanksgiving-Short-Film" class="gallery-item">
-        <img src="Thumbnail__Italian_Thanksgiving.jpg" alt="Italian Thanksgiving Short Film" />
-      </a>
-      <a href="https://www.behance.net/gallery/197892847/Motion-Reel" class="gallery-item">
-        <img src="Thumbnail__Motion_Reel.jpg" alt="Motion Reel" />
-      </a>
-      <a href="https://www.behance.net/gallery/197911773/Remy-Martin-Sombremesa-Commercial" class="gallery-item">
-        <img src="Thumbnail__Remy_Martin.jpg" alt="Remy Martin Sombremesa Commercial" />
-      </a>
-      <a href="https://www.behance.net/gallery/197894337/Voltaren-Short-Film" class="gallery-item">
-        <img src="Thumbnail__Voltaren.jpg" alt="Voltaren Short Film" />
-      </a>
+      </div>
+
+      <!-- Other thumbnails (placeholders) -->
+      <div class="gallery-item"><img src="Thumbnail__Ensora_Health.jpg" alt="Ensora Health" /></div>
+      <div class="gallery-item"><img src="Thumbnail__Voltaren.jpg" alt="Voltaren Short Film" /></div>
+      <div class="gallery-item"><img src="Thumbnail__Excedrin.jpg" alt="Excedrin 3D Model" /></div>
+      <div class="gallery-item"><img src="Thumbnail__Remy_Martin.jpg" alt="Remy Martin Title Card" /></div>
+      <div class="gallery-item"><img src="Thumbnail__Barstool_Sports.jpg" alt="Barstool Sports" /></div>
+      <div class="gallery-item"><img src="Thumbnail__Belmont_Stakes_Design.jpg" alt="Belmont Stakes Design" /></div>
+      <div class="gallery-item"><img src="Thumbnail__Sicilian_Thanksgiving.jpg" alt="Sicilian Thanksgiving" /></div>
     </div>
   </section>
 
-  <footer id="contact">
-    <p>Contact: <a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a> · 
-    <a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a> · 
-    (516) 972-6345 · New York</p>
+  <section id="about">
+    <h3>About Me</h3>
+    <p>
+      I’m a motion and graphic designer specializing in storytelling through animation and visual
+      identity. I use tools like After Effects, Illustrator, Photoshop, and Blender to bring ideas
+      to life. With over 10 years of experience, I create visuals that resonate and move.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a></p>
+    <p>Phone: <a href="tel:+15169726345">(516) 972-6345</a></p>
+    <p>Location: New York</p>
+    <p>
+      <a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 John Zaccaria</p>
   </footer>
+
+  <!-- Aventura Modal -->
+  <div id="aventuraModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="mySlides"><img src="Aventura_Modal1.webp" alt="Slide 1" /></div>
+      <div class="mySlides"><img src="Aventura_Modal2.webp" alt="Slide 2" /></div>
+      <div class="mySlides"><img src="Aventura_Modal3.webp" alt="Slide 3" /></div>
+      <div class="mySlides"><img src="Aventura_Modal4.webp" alt="Slide 4" /></div>
+      <div class="mySlides"><img src="Aventura_Modal5.webp" alt="Slide 5" /></div>
+      <div class="mySlides"><img src="Aventura_Modal6.webp" alt="Slide 6" /></div>
+      <div class="mySlides"><img src="Aventura_Modal7.webp" alt="Slide 7" /></div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+  </div>
+
+  <!-- Modal JS -->
+  <script>
+    function openModal() {
+      document.getElementById("aventuraModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("aventuraModal").style.display = "none";
+    }
+
+    let slideIndex = 1;
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    // Initialize first slide
+    document.addEventListener("DOMContentLoaded", () => {
+      showSlides(slideIndex);
+    });
+  </script>
 </body>
 </html>
