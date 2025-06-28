@@ -125,6 +125,16 @@ section {
 }
 
 /* Modal */
+.scroll-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
 .modal {
   display: none;
   position: fixed;
