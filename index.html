@@ -12,6 +12,7 @@
     <h1>John Zaccaria</h1>
     <nav>
       <a href="#work">Work</a>
+      <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -19,7 +20,7 @@
 
   <section class="hero">
     <iframe
-      src="https://www.youtube.com/embed/euPl3EGlSqs?autoplay=1&mute=1&controls=1&loop=1&playlist=euPl3EGlSqs&modestbranding=1&rel=0"
+      src="https://www.youtube.com/embed/euPl3EGlSqs?autoplay=1&mute=1&loop=1&playlist=euPl3EGlSqs&modestbranding=1&rel=0"
       title="YouTube hero"
       allow="autoplay; encrypted-media"
       allowfullscreen
@@ -30,65 +31,79 @@
     <h2>Selected Work</h2>
     <div class="thumbnail-grid">
       <div class="thumbnail" onclick="openModal('aventuraModal')">
-        <img src="Thumbnail__Aventura_3D.jpg" alt="Aventura Product Modeling" />
+        <img src="images/Aventura.png" alt="Aventura Project" />
       </div>
       <div class="thumbnail">
-        <img src="Thumbnail__Ensora_Explainer.jpg" alt="Ensora Health Explainer" />
+        <img src="images/Barstool.png" alt="Barstool Sports" />
       </div>
       <div class="thumbnail">
-        <img src="Thumbnail__Voltaren.jpg" alt="Voltaren Short Film" />
+        <img src="images/Belmont.png" alt="Belmont Stakes Design" />
       </div>
       <div class="thumbnail">
-        <img src="Thumbnail__Excedrin.jpg" alt="Excedrin 3D Model" />
+        <img src="images/Ensora.png" alt="Ensora Health Explainer" />
       </div>
       <div class="thumbnail">
-        <img src="Thumbnail__Remy_Martin.jpg" alt="Remy Martin Commercial" />
+        <img src="images/Excedrin.png" alt="Excedrin 3D Model" />
       </div>
       <div class="thumbnail">
-        <img src="Thumbnail__Barstool_Sports.jpg" alt="Barstool Sports" />
+        <img src="images/Remy.png" alt="Remy Martin Commercial" />
       </div>
       <div class="thumbnail">
-        <img src="Thumbnail__Belmont_Stakes.jpg" alt="Belmont Stakes Design" />
+        <img src="images/Sicilian.png" alt="Sicilian Thanksgiving" />
       </div>
       <div class="thumbnail">
-        <img src="Thumbnail__Italian_Thanksgiving.jpg" alt="Sicilian Thanksgiving" />
+        <img src="images/Voltaren.png" alt="Voltaren Short Film" />
       </div>
     </div>
   </section>
 
- <section id="about">
-  <h2>About Me</h2>
-  <p>
-    I'm a motion and graphic designer specializing in storytelling through animation and visual identity.  
-    I've worked on projects for Fortune 500 clients as well as small businesses, creating comprehensive visual narratives that connect and inspire.  
-    Skilled in graphic design, motion design, storyboarding, 3D product visualization, and video editing, I handle all aspects of the creative process and provide creative direction.  
-    I use tools like After Effects, Illustrator, Photoshop, and Blender to bring ideas to life. With over 10 years of experience, I create visuals that resonate and move.
-  </p>
-</section>
+  <section id="services">
+    <h2>Services</h2>
+    <ul class="services-list">
+      <li>2D Animation</li>
+      <li>3D Product Visualization</li>
+      <li>Advertising</li>
+      <li>Branding</li>
+      <li>Creative Direction</li>
+      <li>Explainer Videos</li>
+      <li>Graphic Design</li>
+      <li>Illustration</li>
+      <li>Motion Graphics</li>
+      <li>Storyboarding</li>
+      <li>Video Editing</li>
+    </ul>
+  </section>
 
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a motion and graphic designer specializing in storytelling through animation and visual
+      identity. I use tools like After Effects, Illustrator, Photoshop, and Blender to bring ideas
+      to life. With over 10 years of experience, I create visuals that resonate and move.
+    </p>
+  </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>John (Giovanni) Zaccaria</p>
-    <p>New York</p>
-    <p><a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a></p>
-    <p><a href="tel:5169726345">(516) 972-6345</a></p>
-    <p><a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a></p>
+    <p>John (Giovanni) Zaccaria<br>New York</p>
+    <p>
+      <a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a><br>
+      <a href="tel:5169726345">(516) 972-6345</a><br>
+      <a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a>
+    </p>
   </section>
 
-  <!-- Modal for Aventura -->
+  <!-- Aventura Modal -->
   <div id="aventuraModal" class="modal">
-    <div class="modal-header">
+    <div class="modal-content scroll-modal">
       <span class="modal-close" onclick="closeModal('aventuraModal')">&times;</span>
-    </div>
-    <div class="modal-content-vertical">
-      <img src="Aventura_Modal1.webp" alt="Aventura Slide 1" class="modal-image" />
-      <img src="Aventura_Modal2.webp" alt="Aventura Slide 2" class="modal-image" />
-      <img src="Aventura_Modal3.webp" alt="Aventura Slide 3" class="modal-image" />
-      <img src="Aventura_Modal4.webp" alt="Aventura Slide 4" class="modal-image" />
-      <img src="Aventura_Modal5.webp" alt="Aventura Slide 5" class="modal-image" />
-      <img src="Aventura_Modal6.webp" alt="Aventura Slide 6" class="modal-image" />
-      <img src="Aventura_Modal7.webp" alt="Aventura Slide 7" class="modal-image" />
+      <img class="modal-slide" src="images/Aventura_Modal1.webp" alt="Aventura 1" style="display:block;" />
+      <img class="modal-slide" src="images/Aventura_Modal2.webp" alt="Aventura 2" />
+      <img class="modal-slide" src="images/Aventura_Modal3.webp" alt="Aventura 3" />
+      <img class="modal-slide" src="images/Aventura_Modal4.webp" alt="Aventura 4" />
+      <img class="modal-slide" src="images/Aventura_Modal5.webp" alt="Aventura 5" />
+      <img class="modal-slide" src="images/Aventura_Modal6.webp" alt="Aventura 6" />
+      <img class="modal-slide" src="images/Aventura_Modal7.webp" alt="Aventura 7" />
     </div>
   </div>
 
