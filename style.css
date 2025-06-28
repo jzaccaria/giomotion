@@ -42,26 +42,49 @@ nav a:hover {
   height: 60vh;
   min-height: 300px;
   overflow: hidden;
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #000;
 }
 
-.hero-link {
-  position: relative;
+#hero h2 {
+  position: absolute;
+  z-index: 2;
+  font-size: 36px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+/* Desktop video iframe */
+.video-desktop {
   display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.video-desktop iframe {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  border: none;
 }
 
-.hero-thumbnail {
+/* Mobile fallback thumbnail */
+.video-mobile {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.video-mobile img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .play-button {
@@ -77,11 +100,7 @@ nav a:hover {
   pointer-events: none;
 }
 
-/* Remove fallback h2 if present */
-#hero h2 {
-  display: none;
-}
-
+/* GALLERY */
 section {
   padding: 60px 20px;
   max-width: 1200px;
@@ -121,6 +140,7 @@ h3 {
   border-radius: 5px;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
@@ -132,6 +152,7 @@ a {
   color: #0ff;
 }
 
+/* Mobile Rules */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -145,5 +166,13 @@ a {
   nav a {
     margin-left: 0;
     margin-right: 20px;
+  }
+
+  .video-desktop {
+    display: none;
+  }
+
+  .video-mobile {
+    display: block;
   }
 }
