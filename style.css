@@ -1,81 +1,81 @@
-/* Reset and base styles */
+/* General Styles */
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   background-color: #111;
-  color: #fff;
+  color: white;
 }
 
-/* Header and nav */
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background-color: #000;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
 header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 1.8rem;
+  flex: 1 1 100%;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1 1 100%;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
 }
 
 nav a {
-  margin-left: 20px;
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* Hero video */
-.hero {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
-
+/* Hero Video */
 .hero iframe {
   width: 100%;
-  height: 100%;
+  height: 55vh;
+  display: block;
   border: none;
+  object-fit: cover;
 }
 
-/* Section headings */
-section {
-  padding: 40px 20px;
+/* Work Section */
+#work {
+  padding: 2rem;
 }
 
-h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+#work h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-/* Thumbnail grid */
 .thumbnail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 1rem;
 }
 
 .thumbnail {
-  background-color: #000;
-  overflow: hidden;
+  position: relative;
   border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.thumbnail:hover {
-  transform: scale(1.03);
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .thumbnail img {
   width: 100%;
   height: auto;
+  border-radius: 5px;
   display: block;
 }
 
-/* Modal styles */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -84,75 +84,100 @@ h2 {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
   background-color: rgba(0, 0, 0, 0.95);
-  justify-content: center;
-  align-items: center;
 }
 
 .modal-content {
   position: relative;
-  max-width: 95%;
-  max-height: 95%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
 }
 
 .modal-slide {
   display: none;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80vh;
+  margin: auto;
 }
 
-/* Arrows and close button */
-.modal-arrow, .modal-close {
+/* Arrows */
+.modal-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid #fff;
-  color: white;
-  font-size: 24px;
+  font-size: 2rem;
+  background: white;
+  color: black;
   border-radius: 50%;
-  padding: 14px;
+  padding: 0.5rem 0.65rem;
   cursor: pointer;
-  width: 48px;
-  height: 48px;
+  user-select: none;
+  z-index: 10001;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: background-color 0.2s ease;
-}
-
-.modal-arrow:hover, .modal-close:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  justify-content: center;
 }
 
 .modal-arrow.left {
-  left: 10px;
+  left: -40px;
 }
 
 .modal-arrow.right {
-  right: 10px;
+  right: -40px;
 }
 
+/* Close Button */
 .modal-close {
-  top: 20px;
-  right: 20px;
-  transform: none;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  font-size: 2rem;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  h2 {
-    font-size: 24px;
+  header h1 {
+    font-size: 1.5rem;
   }
 
-  .modal-arrow, .modal-close {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    padding: 10px;
+  nav {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .hero iframe {
+    height: 45vh;
+  }
+
+  .modal-arrow.left {
+    left: 10px;
+  }
+
+  .modal-arrow.right {
+    right: 10px;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+  }
+
+  .modal-slide {
+    max-height: 65vh;
   }
 }
