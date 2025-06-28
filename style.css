@@ -22,6 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
 header h1 {
@@ -33,7 +34,7 @@ nav a {
   font-weight: bold;
 }
 
-/* Hero section */
+/* Hero video */
 .hero {
   display: flex;
   justify-content: center;
@@ -83,8 +84,8 @@ nav a {
   transform: scale(1.02);
 }
 
-/* Modal */
-.modal {
+/* Scrollable Modal */
+.modal.scroll-modal {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -92,83 +93,67 @@ nav a {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,0.95);
+  overflow-y: auto;
 }
 
-.modal-content {
-  position: relative;
-  margin: auto;
-  max-width: 90%;
-  max-height: 90%;
+.modal-topbar {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 1rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  justify-content: flex-end;
+  z-index: 1001;
 }
 
-.modal-slide {
-  display: none;
-  max-width: 100%;
-  max-height: 80vh;
-  margin: auto;
-}
-
-/* Modal Arrows and Close Button */
-.modal-arrow,
 .modal-close {
-  position: absolute;
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid white;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 40px;
   text-align: center;
   cursor: pointer;
-  z-index: 1001;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modal-arrow:hover,
 .modal-close:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.modal-arrow.left {
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+.modal-scroll-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-.modal-arrow.right {
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.modal-close {
-  top: 20px;
-  right: 20px;
+.modal-scroll-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 /* About and Contact */
-#about,
-#contact {
+#about, #contact {
   padding: 2rem;
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#about p, #contact p {
+  margin-bottom: 1rem;
 }
 
 #contact a {
-  display: block;
   color: #4fc3f7;
-  margin-top: 0.5rem;
 }
 
 /* Footer */
@@ -179,13 +164,15 @@ footer {
   color: #777;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 768px) {
-  .modal-arrow,
-  .modal-close {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+  .hero {
+    padding: 1rem;
+  }
+
+  .hero iframe {
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
   header {
@@ -197,11 +184,10 @@ footer {
     margin-top: 1rem;
   }
 
-  .hero {
-    padding: 1rem;
-  }
-
-  .hero iframe {
-    height: auto;
+  .modal-close {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    line-height: 36px;
   }
 }
