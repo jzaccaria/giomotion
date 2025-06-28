@@ -1,36 +1,35 @@
-// Modal functionality
-let slideIndex = 0;
+let currentSlideIndex = 0;
 
-function openModal(projectId) {
-  const modal = document.getElementById(`${projectId}Modal`);
-  modal.style.display = 'flex';
-  slideIndex = 0;
-  showSlides(slideIndex);
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.style.display = "flex";
+  showSlide(currentSlideIndex);
+  document.body.style.overflow = 'hidden'; // Prevent background scroll
 }
 
-function closeModal(projectId) {
-  const modal = document.getElementById(`${projectId}Modal`);
-  modal.style.display = 'none';
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.style.display = "none";
+  document.body.style.overflow = 'auto'; // Restore scroll
+  currentSlideIndex = 0; // Reset slide index for next open
 }
 
-function plusSlides(n) {
-  slideIndex += n;
-  showSlides(slideIndex);
-}
-
-function showSlides(n) {
+function changeSlide(direction) {
   const slides = document.querySelectorAll('.modal-slide');
-  if (n >= slides.length) slideIndex = 0;
-  if (n < 0) slideIndex = slides.length - 1;
+  currentSlideIndex += direction;
+
+  if (currentSlideIndex < 0) {
+    currentSlideIndex = slides.length - 1;
+  } else if (currentSlideIndex >= slides.length) {
+    currentSlideIndex = 0;
+  }
+
+  showSlide(currentSlideIndex);
+}
+
+function showSlide(index) {
+  const slides = document.querySelectorAll('.modal-slide');
   slides.forEach((slide, i) => {
-    slide.style.display = i === slideIndex ? 'block' : 'none';
+    slide.style.display = i === index ? 'block' : 'none';
   });
 }
-
-// Close modal on outside click
-window.addEventListener('click', function (event) {
-  const modal = document.getElementById('aventuraModal');
-  if (event.target === modal) {
-    closeModal('aventura');
-  }
-});
