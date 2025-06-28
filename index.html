@@ -1,89 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>John Zaccaria | Motion & Graphic Designer</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>John Zaccaria</h1>
-    <nav>
-      <a href="#portfolio">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <section id="hero">
-    <video autoplay muted loop playsinline poster="fallback.jpg" id="motionReel">
-      <source src="your-motion-reel.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <h2>Design in Motion</h2>
-  </section>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: #eee;
+  line-height: 1.6;
+}
 
-  <section id="portfolio">
-    <h3>Selected Work</h3>
-    <div class="gallery">
+header {
+  background: #000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-      <a href="https://www.behance.net/gallery/48770543/Aventura-3D-Work">
-        <img src="Thumbnail__Aventura_3D.jpg" alt="Aventura 3D" />
-      </a>
+header h1 {
+  font-size: 24px;
+  color: #fff;
+}
 
-      <a href="https://www.behance.net/gallery/57163301/Belmont-Stakes-Video-Editing">
-        <img src="Thumbnail__Belmont_Stakes.jpg" alt="Belmont Stakes" />
-      </a>
+nav a {
+  color: #eee;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-      <a href="https://www.behance.net/gallery/225954645/Ensora-Health-Promo-Video">
-        <img src="Thumbnail__Ensora_Explainer.jpg" alt="Ensora Explainer" />
-      </a>
+nav a:hover {
+  color: #0ff;
+}
 
-      <a href="https://www.behance.net/gallery/225952751/Excedrin-3D-model-for-commercial-work">
-        <img src="Thumbnail__Excedrin.jpg" alt="Excedrin" />
-      </a>
+#hero {
+  position: relative;
+  height: 60vh;
+  min-height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-      <a href="https://www.behance.net/gallery/210227155/YouTube-Cartoon-Sicilian-Thanksgiving">
-        <img src="Thumbnail__Italian_Thanksgiving.jpg" alt="Italian Thanksgiving" />
-      </a>
+#hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 
-      <a href="https://www.behance.net/gallery/35891381/Motion-Graphics-Reel">
-        <img src="Thumbnail__Motion_Reel.jpg" alt="Motion Reel" />
-      </a>
+#hero h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 36px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  color: #fff;
+}
 
-      <a href="https://www.behance.net/gallery/225955465/Remy-Martin-Sobremesa-Animated-Title-Card">
-        <img src="Thumbnail__Remy_Martin.jpg" alt="Remy Martin" />
-      </a>
+/* Mobile fallback for hero video */
+@media (max-width: 768px) {
+  #hero video {
+    display: none;
+  }
+  #hero {
+    background: url('fallback.jpg') center center / cover no-repeat;
+  }
+}
 
-      <a href="https://www.behance.net/gallery/210226095/Voltaren-short-film-A-Touch-of-Love">
-        <img src="Thumbnail__Voltaren.jpg" alt="Voltaren" />
-      </a>
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    </div>
-  </section>
+h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
 
-  <section id="about">
-    <h3>About Me</h3>
-    <p>
-      I’m a motion and graphic designer specializing in storytelling through animation and visual identity. I use tools like After Effects, Illustrator, Photoshop, and Blender to bring ideas to life. With over 10 years of experience, I create visuals that resonate and move.
-    </p>
-  </section>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
 
-  <section id="contact">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a></p>
-    <p>Phone: (516) 972-6345</p>
-    <p>Location: New York</p>
-    <p>
-      Follow me:
-      <a href="https://www.behance.net/jzaccaria">Behance</a> |
-      <a href="https://www.linkedin.com/in/giovannizaccaria/">LinkedIn</a>
-    </p>
-  </section>
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  <footer>
-    <p>&copy; 2025 John Zaccaria</p>
-  </footer>
-</body>
-</html>
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.2);
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  background-color: #000;
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #000;
+  color: #777;
+}
+
+a {
+  color: #0ff;
+}
