@@ -47,7 +47,6 @@ nav a:hover {
   text-align: center;
 }
 
-/* YouTube video container */
 .video-wrapper {
   position: absolute;
   top: 0;
@@ -79,13 +78,14 @@ nav a:hover {
   border-radius: 8px;
 }
 
-/* Mobile fallback (optional if iframe fails) */
+/* Remove fallback on mobile */
 @media (max-width: 768px) {
   .video-wrapper {
-    display: none;
+    display: block;
   }
-  #hero {
-    background: url('fallback.jpg') center center / cover no-repeat;
+  #hero h2 {
+    font-size: 24px;
+    padding: 15px;
   }
 }
 
