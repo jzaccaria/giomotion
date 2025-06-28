@@ -22,37 +22,29 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  flex-wrap: wrap;
 }
 
 header h1 {
   font-size: 1.5rem;
-  flex: 1 0 auto;
-}
-
-nav {
-  display: flex;
-  gap: 1rem;
-  flex: 1 0 auto;
-  justify-content: flex-end;
 }
 
 nav a {
+  margin-left: 1rem;
   font-weight: bold;
 }
 
-/* Hero video */
+/* Hero section */
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 2rem;
 }
 
 .hero iframe {
   width: 100%;
   max-width: 900px;
-  height: 507px;
+  height: 580px;
   border: none;
   border-radius: 10px;
 }
@@ -112,8 +104,8 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .modal-slide {
@@ -160,27 +152,31 @@ nav a {
 }
 
 .modal-close {
-  right: 20px;
   top: 20px;
-  transform: none;
+  right: 20px;
 }
 
-/* About Section */
-#about {
-  padding: 2rem;
-  line-height: 1.6;
-}
-
-/* Contact Section */
+/* About and Contact */
+#about,
 #contact {
   padding: 2rem;
   text-align: center;
+  max-width: 800px;
+  margin: auto;
 }
 
 #contact a {
   display: block;
   color: #4fc3f7;
   margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #000;
+  color: #777;
 }
 
 /* Responsive tweaks */
@@ -199,7 +195,6 @@ nav a {
 
   nav {
     margin-top: 1rem;
-    justify-content: flex-start;
   }
 
   .hero {
@@ -207,6 +202,6 @@ nav a {
   }
 
   .hero iframe {
-    height: 250px;
+    height: auto;
   }
 }
