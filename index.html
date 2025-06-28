@@ -18,42 +18,36 @@
   </header>
 
   <section class="hero">
-    <iframe
-      src="https://www.youtube.com/embed/euPl3EGlSqs?autoplay=1&mute=1&controls=0&loop=1&playlist=euPl3EGlSqs&modestbranding=1&showinfo=0&rel=0"
-      title="YouTube hero"
-      allow="autoplay; encrypted-media"
-      allowfullscreen
-    ></iframe>
+    <video autoplay muted loop playsinline>
+      <source src="your-motion-reel.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </section>
 
   <section id="work">
     <h2>Selected Work</h2>
     <div class="thumbnail-grid">
-      <!-- Aventura with modal trigger -->
       <div class="thumbnail" onclick="openModal('aventuraModal')">
         <img src="Thumbnail__Aventura_3D.jpg" alt="Aventura Product Modeling" />
       </div>
-
       <div class="thumbnail">
         <img src="Thumbnail__Ensora_Explainer.jpg" alt="Ensora Health Explainer" />
       </div>
-
       <div class="thumbnail">
         <img src="Thumbnail__Voltaren.jpg" alt="Voltaren Short Film" />
       </div>
-
       <div class="thumbnail">
         <img src="Thumbnail__Excedrin.jpg" alt="Excedrin 3D Model" />
       </div>
-
       <div class="thumbnail">
         <img src="Thumbnail__Remy_Martin.jpg" alt="Remy Martin Sombresma Commercial" />
       </div>
-
+      <div class="thumbnail">
+        <img src="Thumbnail__Barstool_Sports.jpg" alt="Barstool Sports" />
+      </div>
       <div class="thumbnail">
         <img src="Thumbnail__Belmont_Stakes.jpg" alt="Belmont Stakes Design" />
       </div>
-
       <div class="thumbnail">
         <img src="Thumbnail__Italian_Thanksgiving.jpg" alt="Sicilian Thanksgiving" />
       </div>
@@ -75,6 +69,15 @@
       <span class="modal-arrow right" onclick="changeSlide(1)">&#10095;</span>
     </div>
   </div>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>John (Giovanni) Zaccaria</p>
+    <p>New York</p>
+    <p><a href="tel:5169726345">(516) 972-6345</a></p>
+    <p><a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a></p>
+    <p><a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a></p>
+  </section>
 
   <script src="script.js"></script>
 </body>
