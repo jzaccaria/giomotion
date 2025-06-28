@@ -39,49 +39,26 @@ nav a:hover {
 
 #hero {
   position: relative;
-  width: 100%;
   height: 60vh;
   min-height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #000;
 }
 
-.hero-desktop {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-desktop iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.hero-mobile {
-  display: none;
+.video-container {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.hero-thumbnail {
+.video-container iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 64px;
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px 30px;
-  border-radius: 50%;
-  pointer-events: none;
+  border: none;
+  pointer-events: auto;
 }
 
 section {
@@ -102,6 +79,7 @@ h3 {
 }
 
 .gallery-item {
+  position: relative;
   overflow: hidden;
   background-color: #000;
   border-radius: 5px;
@@ -127,19 +105,31 @@ footer {
   padding: 30px;
   background-color: #000;
   color: #777;
+  font-size: 14px;
 }
 
 a {
   color: #0ff;
 }
 
-/* Mobile override */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive nav adjustments */
 @media (max-width: 768px) {
-  .hero-desktop {
-    display: none;
+  header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .hero-mobile {
-    display: block;
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 15px;
   }
 }
