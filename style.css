@@ -157,17 +157,23 @@ a:hover {
   border-radius: 5px;
 }
 
+/* Next & Prev Buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  padding: 16px;
+  padding: 12px;
   color: white;
   font-weight: bold;
   font-size: 24px;
   user-select: none;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.5);
   border-radius: 50%;
+  border: 2px solid #fff;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  line-height: 24px;
   transform: translateY(-50%);
 }
 
@@ -176,24 +182,32 @@ a:hover {
 }
 
 .prev {
-  left: 10px;
+  left: 20px;
 }
 
 .next {
-  right: 10px;
+  right: 20px;
 }
 
+/* Close (X) Button */
 .close {
   position: absolute;
   top: 20px;
-  right: 35px;
+  right: 25px;
   color: #fff;
-  font-size: 40px;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   z-index: 1001;
+  background-color: rgba(0,0,0,0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  text-align: center;
+  line-height: 36px;
 }
 
 .close:hover {
-  color: #bbb;
+  background-color: rgba(255,255,255,0.2);
 }
