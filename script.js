@@ -1,35 +1,51 @@
+// Modal logic for Aventura
 let currentSlideIndex = 0;
 
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
-  modal.style.display = "flex";
-  showSlide(currentSlideIndex);
-  document.body.style.overflow = 'hidden'; // Prevent background scroll
+  if (!modal) return;
+
+  modal.style.display = 'block';
+  currentSlideIndex = 0;
+
+  const slides = modal.querySelectorAll('.modal-slide');
+  slides.forEach((slide, index) => {
+    slide.style.display = index === 0 ? 'block' : 'none';
+  });
 }
 
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
-  modal.style.display = "none";
-  document.body.style.overflow = 'auto'; // Restore scroll
-  currentSlideIndex = 0; // Reset slide index for next open
+  if (modal) {
+    modal.style.display = 'none';
+  }
 }
 
 function changeSlide(direction) {
-  const slides = document.querySelectorAll('.modal-slide');
+  const modal = document.getElementById('aventuraModal');
+  const slides = modal.querySelectorAll('.modal-slide');
+
+  // Hide current
+  slides[currentSlideIndex].style.display = 'none';
+
+  // Update index
   currentSlideIndex += direction;
 
-  if (currentSlideIndex < 0) {
-    currentSlideIndex = slides.length - 1;
-  } else if (currentSlideIndex >= slides.length) {
+  // Wrap around
+  if (currentSlideIndex >= slides.length) {
     currentSlideIndex = 0;
+  } else if (currentSlideIndex < 0) {
+    currentSlideIndex = slides.length - 1;
   }
 
-  showSlide(currentSlideIndex);
+  // Show new slide
+  slides[currentSlideIndex].style.display = 'block';
 }
 
-function showSlide(index) {
-  const slides = document.querySelectorAll('.modal-slide');
-  slides.forEach((slide, i) => {
-    slide.style.display = i === index ? 'block' : 'none';
-  });
-}
+// Optional: Close modal on background click
+window.addEventListener('click', function (e) {
+  const modal = document.getElementById('aventuraModal');
+  if (e.target === modal) {
+    closeModal('aventuraModal');
+  }
+});
