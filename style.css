@@ -149,7 +149,7 @@ section {
   overflow: hidden;
 }
 
-/* NEW – Vertical Scroll Layout for Modal Images */
+/* Vertical Scroll Layout for Modal Images */
 .scroll-gallery {
   display: flex;
   flex-direction: column;
@@ -160,7 +160,18 @@ section {
   max-height: 90vh;
 }
 
-/* NEW – Sticky header and circular close button */
+/* ✅ Proper image sizing and spacing */
+.scroll-gallery img {
+  max-width: 100%;
+  max-height: 80vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* Sticky header and circular close button */
 .modal-header {
   position: sticky;
   top: 0;
