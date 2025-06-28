@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>John Zaccaria | Motion Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giovanni Zaccaria | Motion Design</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>John Zaccaria</h1>
+    <h1>John<br />Zaccaria</h1>
     <nav>
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -16,122 +16,71 @@
     </nav>
   </header>
 
-  <section id="hero">
-    <div class="video-container">
-      <iframe 
-        src="https://www.youtube.com/embed/euPl3EGlSqs?autoplay=1&mute=1&controls=0&loop=1&playlist=euPl3EGlSqs&modestbranding=1&rel=0&playsinline=1"
-        title="Hero Video"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-      ></iframe>
-    </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="your-motion-reel.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </section>
 
+  <!-- Work Section -->
   <section id="work">
     <h2>Selected Work</h2>
     <div class="gallery">
-      <div class="gallery-item" onclick="openModal('aventuraModal')">
-        <img src="Thumbnail__Aventura_3D.jpg" alt="Aventura Product Modeling">
+      <div class="thumb" onclick="openModal('aventura')">
+        <img src="Thumbnail__Aventura_3D.jpg" alt="Aventura Product Modeling" />
       </div>
-
-      <div class="gallery-item">
-        <img src="Thumbnail__Ensora_Explainer.jpg" alt="Ensora Health">
+      <div class="thumb">
+        <img src="Thumbnail__Ensora_Explainer.jpg" alt="Ensora Health" />
       </div>
-
-      <div class="gallery-item">
-        <img src="Thumbnail__Voltaren.jpg" alt="Voltaren Short Film">
+      <div class="thumb">
+        <img src="Thumbnail__Voltaren.jpg" alt="Voltaren Short Film" />
       </div>
-
-      <div class="gallery-item">
-        <img src="Thumbnail__Excedrin.jpg" alt="Excedrin 3D Model">
+      <div class="thumb">
+        <img src="Thumbnail__Excedrin.jpg" alt="Excedrin 3D Model" />
       </div>
-
-      <div class="gallery-item">
-        <img src="Thumbnail__Remy_Martin.jpg" alt="Remy Martin Sombremesa Commercial">
+      <div class="thumb">
+        <img src="Thumbnail__Remy_Martin.jpg" alt="Remy Martin Sombremesa Commercial" />
       </div>
-
-      <div class="gallery-item">
-        <img src="Thumbnail__Barstool_Sports.jpg" alt="Barstool Sports">
+      <div class="thumb">
+        <img src="Thumbnail__Barstool.jpg" alt="Barstool Sports" />
       </div>
-
-      <div class="gallery-item">
-        <img src="Thumbnail__Belmont_Stakes.jpg" alt="Belmont Stakes Design">
+      <div class="thumb">
+        <img src="Thumbnail__Belmont_Stakes.jpg" alt="Belmont Stakes Design" />
       </div>
-
-      <div class="gallery-item">
-        <img src="Thumbnail__Italian_Thanksgiving.jpg" alt="Sicilian Thanksgiving">
+      <div class="thumb">
+        <img src="Thumbnail__Italian_Thanksgiving.jpg" alt="Sicilian Thanksgiving" />
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>Motion Designer & Creative Director based in New York.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>John (Giovanni) Zaccaria<br>
-    New York<br>
-    <a href="tel:5169726345">(516) 972-6345</a><br>
-    <a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a><br>
-    <a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 John Zaccaria</p>
-  </footer>
-
-  <!-- Modal for Aventura -->
+  <!-- Aventura Modal -->
   <div id="aventuraModal" class="modal">
-    <span class="modal-close" onclick="closeModal('aventuraModal')">&times;</span>
+    <span class="close" onclick="closeModal('aventura')">&times;</span>
     <div class="modal-content">
-      <span class="modal-prev" onclick="changeSlide(-1)">&#10094;</span>
-      <img class="modal-image" src="Aventura_Modal1.webp" alt="Aventura Slide">
-      <span class="modal-next" onclick="changeSlide(1)">&#10095;</span>
+      <button class="modal-nav left" onclick="plusSlides(-1)">&#10094;</button>
+      <div class="carousel">
+        <img class="modal-slide" src="Aventura_Modal1.webp" alt="Aventura Slide 1" />
+        <img class="modal-slide" src="Aventura_Modal2.webp" alt="Aventura Slide 2" />
+        <img class="modal-slide" src="Aventura_Modal3.webp" alt="Aventura Slide 3" />
+        <img class="modal-slide" src="Aventura_Modal4.webp" alt="Aventura Slide 4" />
+        <img class="modal-slide" src="Aventura_Modal5.webp" alt="Aventura Slide 5" />
+        <img class="modal-slide" src="Aventura_Modal6.webp" alt="Aventura Slide 6" />
+        <img class="modal-slide" src="Aventura_Modal7.webp" alt="Aventura Slide 7" />
+      </div>
+      <button class="modal-nav right" onclick="plusSlides(1)">&#10095;</button>
     </div>
   </div>
 
-  <script>
-    let currentSlide = 0;
-    const aventuraImages = [
-      "Aventura_Modal1.webp",
-      "Aventura_Modal2.webp",
-      "Aventura_Modal3.webp",
-      "Aventura_Modal4.webp",
-      "Aventura_Modal5.webp",
-      "Aventura_Modal6.webp",
-      "Aventura_Modal7.webp"
-    ];
+  <!-- Contact -->
+  <footer id="contact">
+    <p>Giovanni Zaccaria • New York<br />
+    (516) 972-6345<br />
+    <a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a><br />
+    <a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a></p>
+  </footer>
 
-    function openModal(id) {
-      document.getElementById(id).style.display = "block";
-      showSlide(currentSlide);
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-
-    function changeSlide(direction) {
-      currentSlide += direction;
-      if (currentSlide < 0) currentSlide = aventuraImages.length - 1;
-      if (currentSlide >= aventuraImages.length) currentSlide = 0;
-      showSlide(currentSlide);
-    }
-
-    function showSlide(index) {
-      const modalImg = document.querySelector("#aventuraModal .modal-image");
-      modalImg.src = aventuraImages[index];
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById("aventuraModal");
-      if (event.target === modal) {
-        closeModal("aventuraModal");
-      }
-    };
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
