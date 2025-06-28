@@ -7,7 +7,7 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #4fc3f7;
   text-decoration: none;
 }
 
@@ -32,9 +32,10 @@ header h1 {
 nav a {
   margin-left: 1rem;
   font-weight: bold;
+  color: #fff;
 }
 
-/* Hero video */
+/* Hero */
 .hero {
   display: flex;
   justify-content: center;
@@ -44,8 +45,8 @@ nav a {
 
 .hero iframe {
   width: 100%;
-  max-width: 900px;
-  height: 580px;
+  max-width: 960px;
+  height: 540px;
   border: none;
   border-radius: 10px;
 }
@@ -84,38 +85,37 @@ nav a {
   transform: scale(1.02);
 }
 
-/* Scrollable Modal */
-.modal.scroll-modal {
+/* Modal overlay */
+.modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-color: rgba(0,0,0,0.95);
   overflow-y: auto;
 }
 
-.modal-topbar {
+/* Modal top bar */
+.modal-header {
   position: sticky;
   top: 0;
-  background: rgba(0, 0, 0, 0.95);
-  padding: 1rem;
+  background-color: #111;
   display: flex;
   justify-content: flex-end;
+  padding: 1rem;
   z-index: 1001;
 }
 
+/* Close button */
 .modal-close {
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid white;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   color: white;
-  font-size: 20px;
-  line-height: 40px;
+  font-size: 24px;
+  line-height: 48px;
   text-align: center;
   cursor: pointer;
   display: flex;
@@ -127,52 +127,47 @@ nav a {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.modal-scroll-content {
-  padding: 2rem;
+/* Vertical modal layout */
+.modal-content-vertical {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
+  gap: 1rem;
 }
 
-.modal-scroll-content img {
+.modal-image {
+  width: 100%;
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-/* About and Contact */
+/* About & Contact */
 #about, #contact {
   padding: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
-#about p, #contact p {
+#about h2,
+#contact h2 {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-#contact a {
-  color: #4fc3f7;
+#contact p,
+#about p {
+  margin: 0.5rem 0;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #000;
-  color: #777;
-}
-
-/* Responsive */
+/* Responsive tweaks */
 @media (max-width: 768px) {
-  .hero {
-    padding: 1rem;
-  }
-
-  .hero iframe {
-    height: auto;
-    aspect-ratio: 16 / 9;
+  .modal-close {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
   }
 
   header {
@@ -184,10 +179,12 @@ footer {
     margin-top: 1rem;
   }
 
-  .modal-close {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-    line-height: 36px;
+  .hero {
+    padding: 1rem;
+  }
+
+  .hero iframe {
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
