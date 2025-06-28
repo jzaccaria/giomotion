@@ -149,6 +149,50 @@ section {
   overflow: hidden;
 }
 
+/* NEW – Vertical Scroll Layout for Modal Images */
+.scroll-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+/* NEW – Sticky header and circular close button */
+.modal-header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  z-index: 1002;
+  text-align: right;
+}
+
+.modal-header .close {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.modal-header .close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 .modal-slide {
   display: none;
   max-width: 100%;
@@ -194,27 +238,6 @@ section {
 .modal-close {
   top: 20px;
   right: 20px;
-}
-
-/* ✅ NEW: Modal Header for Sticky Close */
-.modal-header {
-  position: sticky;
-  top: 0;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 1rem;
-  z-index: 1002;
-  text-align: right;
-}
-
-/* ✅ NEW: Vertical Scroll Gallery */
-.scroll-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem 1rem;
-  overflow-y: auto;
-  max-height: 90vh;
 }
 
 /* Responsive tweaks */
