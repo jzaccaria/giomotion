@@ -1,51 +1,38 @@
-// Modal logic for Aventura
-let currentSlideIndex = 0;
-
+// Scroll modal logic for Aventura
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
-  if (!modal) return;
-
-  modal.style.display = 'block';
-  currentSlideIndex = 0;
-
-  const slides = modal.querySelectorAll('.modal-slide');
-  slides.forEach((slide, index) => {
-    slide.style.display = index === 0 ? 'block' : 'none';
-  });
+  if (modal) {
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  }
 }
 
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
     modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scroll
   }
 }
 
-function changeSlide(direction) {
-  const modal = document.getElementById('aventuraModal');
-  const slides = modal.querySelectorAll('.modal-slide');
-
-  // Hide current
-  slides[currentSlideIndex].style.display = 'none';
-
-  // Update index
-  currentSlideIndex += direction;
-
-  // Wrap around
-  if (currentSlideIndex >= slides.length) {
-    currentSlideIndex = 0;
-  } else if (currentSlideIndex < 0) {
-    currentSlideIndex = slides.length - 1;
+// Close modal on Escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    const openModals = document.querySelectorAll('.modal');
+    openModals.forEach(modal => {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
   }
+});
 
-  // Show new slide
-  slides[currentSlideIndex].style.display = 'block';
-}
-
-// Optional: Close modal on background click
+// Optional: Close modal when clicking outside modal content
 window.addEventListener('click', function (e) {
-  const modal = document.getElementById('aventuraModal');
-  if (e.target === modal) {
-    closeModal('aventuraModal');
-  }
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
 });
