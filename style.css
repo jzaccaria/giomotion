@@ -1,101 +1,110 @@
-/* General Styles */
+/* Reset and base */
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #111;
-  color: white;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h1, h2 {
+  margin: 0;
 }
 
 /* Header */
 header {
+  background: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000;
   padding: 1rem 2rem;
-  flex-wrap: wrap;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 1.8rem;
-  flex: 1 1 100%;
-}
-
-nav {
-  display: flex;
-  gap: 1.5rem;
-  flex: 1 1 100%;
-  justify-content: flex-end;
-  margin-top: 0.5rem;
+  font-size: 1.5rem;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
+  margin-left: 1rem;
   font-weight: bold;
 }
 
-/* Hero Video */
-.hero iframe {
-  width: 100%;
-  height: 55vh;
-  display: block;
-  border: none;
-  object-fit: cover;
+/* Hero video */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
-/* Work Section */
+.hero video {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Work section */
 #work {
   padding: 2rem;
 }
 
 #work h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .thumbnail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 
 .thumbnail {
   position: relative;
-  border-radius: 8px;
+  border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
 }
 
 .thumbnail img {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
   display: block;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.02);
 }
 
 /* Modal */
 .modal {
   display: none;
   position: fixed;
-  z-index: 9999;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0,0,0,0.9);
 }
 
 .modal-content {
   position: relative;
   margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
   max-width: 90%;
   max-height: 90%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .modal-slide {
@@ -105,79 +114,79 @@ nav a {
   margin: auto;
 }
 
-/* Arrows */
-.modal-arrow {
+/* Modal Arrows and Close Button */
+.modal-arrow,
+.modal-close {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
-  background: white;
-  color: black;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid white;
   border-radius: 50%;
-  padding: 0.5rem 0.65rem;
+  width: 48px;
+  height: 48px;
+  color: white;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: center;
   cursor: pointer;
-  user-select: none;
-  z-index: 10001;
+  z-index: 1001;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+
+.modal-arrow:hover,
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .modal-arrow.left {
-  left: -40px;
+  left: 10px;
 }
 
 .modal-arrow.right {
-  right: -40px;
+  right: 10px;
 }
 
-/* Close Button */
 .modal-close {
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  font-size: 2rem;
-  background: white;
-  color: black;
-  border-radius: 50%;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  user-select: none;
-  z-index: 10001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 20px;
+  right: 20px;
+  transform: none;
 }
 
-/* Responsive Adjustments */
+/* Contact section */
+#contact {
+  padding: 2rem;
+  text-align: center;
+}
+
+#contact a {
+  display: block;
+  color: #4fc3f7;
+  margin-top: 0.5rem;
+}
+
+/* Responsive tweaks */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.5rem;
+  .modal-arrow,
+  .modal-close {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   nav {
-    justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 
-  .hero iframe {
-    height: 45vh;
-  }
-
-  .modal-arrow.left {
-    left: 10px;
-  }
-
-  .modal-arrow.right {
-    right: 10px;
-  }
-
-  .modal-close {
-    top: 10px;
-    right: 10px;
-  }
-
-  .modal-slide {
-    max-height: 65vh;
+  .hero {
+    padding: 1rem;
   }
 }
