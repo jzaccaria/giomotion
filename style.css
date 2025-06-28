@@ -125,16 +125,6 @@ section {
 }
 
 /* Modal */
-.scroll-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem 1rem;
-  overflow-y: auto;
-  max-height: 90vh;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -204,6 +194,27 @@ section {
 .modal-close {
   top: 20px;
   right: 20px;
+}
+
+/* ✅ NEW: Modal Header for Sticky Close */
+.modal-header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  z-index: 1002;
+  text-align: right;
+}
+
+/* ✅ NEW: Vertical Scroll Gallery */
+.scroll-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  max-height: 90vh;
 }
 
 /* Responsive tweaks */
