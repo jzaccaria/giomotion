@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Giovanni Zaccaria | Motion Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>John Zaccaria – Motion Design</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>John<br />Zaccaria</h1>
+    <h1>John Zaccaria</h1>
     <nav>
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -16,70 +17,68 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="your-motion-reel.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <iframe
+      src="https://www.youtube.com/embed/euPl3EGlSqs?autoplay=1&mute=1&controls=0&loop=1&playlist=euPl3EGlSqs&modestbranding=1&showinfo=0&rel=0"
+      title="YouTube hero"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
   </section>
 
-  <!-- Work Section -->
   <section id="work">
     <h2>Selected Work</h2>
-    <div class="gallery">
-      <div class="thumb" onclick="openModal('aventura')">
-        <img src="Thumbnail__Aventura_3D.jpg" alt="Aventura Product Modeling" />
+    <div class="thumbnail-grid">
+      <!-- Aventura with modal trigger -->
+      <div class="thumbnail" onclick="openModal('aventuraModal')">
+        <img src="images/Aventura_Thumb.webp" alt="Aventura Product Modeling" />
       </div>
-      <div class="thumb">
-        <img src="Thumbnail__Ensora_Explainer.jpg" alt="Ensora Health" />
+
+      <div class="thumbnail">
+        <img src="images/Ensora.webp" alt="Ensora Health Explainer" />
       </div>
-      <div class="thumb">
-        <img src="Thumbnail__Voltaren.jpg" alt="Voltaren Short Film" />
+
+      <div class="thumbnail">
+        <img src="images/Voltaren.webp" alt="Voltaren Short Film" />
       </div>
-      <div class="thumb">
-        <img src="Thumbnail__Excedrin.jpg" alt="Excedrin 3D Model" />
+
+      <div class="thumbnail">
+        <img src="images/Excedrin.webp" alt="Excedrin 3D Model" />
       </div>
-      <div class="thumb">
-        <img src="Thumbnail__Remy_Martin.jpg" alt="Remy Martin Sombremesa Commercial" />
+
+      <div class="thumbnail">
+        <img src="images/Remy.webp" alt="Remy Martin Sombresma Commercial" />
       </div>
-      <div class="thumb">
-        <img src="Thumbnail__Barstool.jpg" alt="Barstool Sports" />
+
+      <div class="thumbnail">
+        <img src="images/Barstool.webp" alt="Barstool Sports" />
       </div>
-      <div class="thumb">
-        <img src="Thumbnail__Belmont_Stakes.jpg" alt="Belmont Stakes Design" />
+
+      <div class="thumbnail">
+        <img src="images/Belmont.webp" alt="Belmont Stakes Design" />
       </div>
-      <div class="thumb">
-        <img src="Thumbnail__Italian_Thanksgiving.jpg" alt="Sicilian Thanksgiving" />
+
+      <div class="thumbnail">
+        <img src="images/Sicilian.webp" alt="Sicilian Thanksgiving" />
       </div>
     </div>
   </section>
 
   <!-- Aventura Modal -->
   <div id="aventuraModal" class="modal">
-    <span class="close" onclick="closeModal('aventura')">&times;</span>
     <div class="modal-content">
-      <button class="modal-nav left" onclick="plusSlides(-1)">&#10094;</button>
-      <div class="carousel">
-        <img class="modal-slide" src="Aventura_Modal1.webp" alt="Aventura Slide 1" />
-        <img class="modal-slide" src="Aventura_Modal2.webp" alt="Aventura Slide 2" />
-        <img class="modal-slide" src="Aventura_Modal3.webp" alt="Aventura Slide 3" />
-        <img class="modal-slide" src="Aventura_Modal4.webp" alt="Aventura Slide 4" />
-        <img class="modal-slide" src="Aventura_Modal5.webp" alt="Aventura Slide 5" />
-        <img class="modal-slide" src="Aventura_Modal6.webp" alt="Aventura Slide 6" />
-        <img class="modal-slide" src="Aventura_Modal7.webp" alt="Aventura Slide 7" />
-      </div>
-      <button class="modal-nav right" onclick="plusSlides(1)">&#10095;</button>
+      <span class="modal-close" onclick="closeModal('aventuraModal')">&times;</span>
+      <span class="modal-arrow left" onclick="changeSlide(-1)">&#10094;</span>
+      <img class="modal-slide" src="images/Aventura_Modal1.webp" alt="Slide 1" />
+      <img class="modal-slide" src="images/Aventura_Modal2.webp" alt="Slide 2" />
+      <img class="modal-slide" src="images/Aventura_Modal3.webp" alt="Slide 3" />
+      <img class="modal-slide" src="images/Aventura_Modal4.webp" alt="Slide 4" />
+      <img class="modal-slide" src="images/Aventura_Modal5.webp" alt="Slide 5" />
+      <img class="modal-slide" src="images/Aventura_Modal6.webp" alt="Slide 6" />
+      <img class="modal-slide" src="images/Aventura_Modal7.webp" alt="Slide 7" />
+      <span class="modal-arrow right" onclick="changeSlide(1)">&#10095;</span>
     </div>
   </div>
-
-  <!-- Contact -->
-  <footer id="contact">
-    <p>Giovanni Zaccaria • New York<br />
-    (516) 972-6345<br />
-    <a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a><br />
-    <a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a></p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
