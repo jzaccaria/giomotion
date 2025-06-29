@@ -136,7 +136,7 @@ section {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden !important; /* Prevent modal itself from scrolling */
+  overflow: hidden !important;
   background-color: rgba(0,0,0,0.9);
 }
 
@@ -146,7 +146,7 @@ section {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Changed from center to flex-start */
+  align-items: flex-start;
   overflow: hidden;
 }
 
@@ -162,14 +162,13 @@ section {
   max-height: 100vh !important;
   width: 100%;
   max-width: 600px;
-  scroll-behavior: auto !important; /* Disable smooth scrolling */
-  /* Remove any conflicting styles */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+  scroll-behavior: auto !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .scroll-gallery::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 /* Proper image sizing and spacing - FIXED */
@@ -181,13 +180,12 @@ section {
   object-fit: contain !important;
   display: block !important;
   margin-bottom: 2rem !important;
-  /* Remove any overflow clipping on images */
   overflow: visible !important;
 }
 
 /* Sticky header and circular close button */
 .modal-header {
-  position: fixed !important; /* Changed from sticky to fixed */
+  position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
@@ -195,7 +193,7 @@ section {
   padding: 1rem;
   z-index: 1002;
   text-align: right;
-  pointer-events: none; /* Allow clicks through header */
+  pointer-events: none;
 }
 
 .modal-header .close {
@@ -215,7 +213,7 @@ section {
   position: absolute;
   top: 20px;
   right: 20px;
-  pointer-events: auto; /* Re-enable clicks on close button */
+  pointer-events: auto;
 }
 
 .modal-header .close:hover {
@@ -295,4 +293,10 @@ section {
   .hero iframe {
     height: 240px;
   }
+}
+
+/* ✅ NEW: Center scroll-gallery horizontally using a wrapper */
+.scroll-gallery-wrapper {
+  display: flex;
+  justify-content: center;
 }
