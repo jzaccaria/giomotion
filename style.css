@@ -304,7 +304,8 @@ section {
 }
 
 .back-to-top {
-  bottom: 100px; /* was 80px */
+  position: fixed;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
   width: 48px;
@@ -322,10 +323,6 @@ section {
   transition: background-color 0.2s ease, opacity 0.2s ease;
   opacity: 0;
   pointer-events: none;
-}
-
-.back-to-top:hover {
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 
