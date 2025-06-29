@@ -4,6 +4,12 @@ function openModal(modalId) {
   if (modal) {
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
+    // Reset scroll position to show first image
+    const modalContent = modal.querySelector('.modal-content');
+    if (modalContent) {
+      modalContent.scrollTop = 0;
+    }
   }
 }
 
