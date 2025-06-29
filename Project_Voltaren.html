@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voltaren Project – John Zaccaria</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>John Zaccaria</h1>
+    <nav>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <iframe
+      src="https://www.youtube.com/embed/teAlhkJM7k4?start=55&autoplay=1&mute=1&modestbranding=1&rel=0"
+      title="Voltaren Project"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </section>
+
+  <div class="back-to-top" onclick="scrollToTop()">&#8679;</div>
+
+  <script>
+    // Back to top button behavior
+    const backToTop = document.querySelector(".back-to-top");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        backToTop.style.opacity = "1";
+        backToTop.style.pointerEvents = "auto";
+      } else {
+        backToTop.style.opacity = "0";
+        backToTop.style.pointerEvents = "none";
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
