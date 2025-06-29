@@ -71,10 +71,13 @@ section {
 }
 
 .thumbnail {
+  display: block; /* Make <a class="thumbnail"> behave like a div */
   position: relative;
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .thumbnail img {
