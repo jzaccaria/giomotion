@@ -5,36 +5,28 @@ function openModal(modalId) {
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
     
-    // Get the scroll gallery
+    // NUCLEAR OPTION: Completely rebuild the scroll gallery to force reset
     const scrollGallery = modal.querySelector('.scroll-gallery');
     if (scrollGallery) {
-      // Force immediate scroll reset
-      scrollGallery.scrollTop = 0;
+      // Store the current HTML content
+      const originalHTML = scrollGallery.innerHTML;
       
-      // Additional force: temporarily change and restore the scroll behavior
-      const originalOverflow = scrollGallery.style.overflowY;
-      scrollGallery.style.overflowY = 'hidden';
+      // Clear and rebuild the gallery
+      scrollGallery.innerHTML = '';
       
-      // Force reflow
+      // Force a reflow
       scrollGallery.offsetHeight;
       
-      // Restore overflow and reset scroll
-      scrollGallery.style.overflowY = originalOverflow || 'auto';
+      // Restore the content
+      scrollGallery.innerHTML = originalHTML;
+      
+      // Ensure we're at the top
       scrollGallery.scrollTop = 0;
       
-      // Final backup with animation frame
-      requestAnimationFrame(() => {
+      // Double-check after images load
+      setTimeout(() => {
         scrollGallery.scrollTop = 0;
-        
-        // Also try scrolling the first image into view
-        const firstImage = scrollGallery.querySelector('img:first-child');
-        if (firstImage) {
-          firstImage.scrollIntoView({ 
-            block: 'start',
-            behavior: 'instant' 
-          });
-        }
-      });
+      }, 100);
     }
   }
 }
