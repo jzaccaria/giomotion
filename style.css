@@ -121,11 +121,13 @@ section {
   margin: 0 auto;
 }
 
-#contact a {
-  display: block;
-  color: #4fc3f7;
-  margin-top: 0.5rem;
+#contact {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 100px; /* ✅ Add this */
 }
+
 
 /* Modal - FIXED */
 .modal {
