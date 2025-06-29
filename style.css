@@ -251,6 +251,16 @@ section {
   right: 20px;
 }
 
+/* Hide scrollbar in scroll-gallery while preserving scroll functionality */
+.scroll-gallery {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.scroll-gallery::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .modal-arrow,
