@@ -40,6 +40,24 @@
     <p><a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a></p>
   </section>
 <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+  <script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Optional: show/hide button when scrolling
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTopBtn.style.opacity = '1';
+      backToTopBtn.style.pointerEvents = 'auto';
+    } else {
+      backToTopBtn.style.opacity = '0';
+      backToTopBtn.style.pointerEvents = 'none';
+    }
+  });
+</script>
+
 
 </body>
 </html>
