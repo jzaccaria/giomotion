@@ -158,7 +158,7 @@ section {
   overflow-x: hidden !important;
   max-height: 100vh !important;
   width: 100%;
-  max-width: 90%;
+  max-width: 600px;
   scroll-behavior: auto !important; /* Disable smooth scrolling */
   /* Remove any conflicting styles */
   scrollbar-width: none; /* Firefox */
