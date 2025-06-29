@@ -303,7 +303,7 @@ section {
 
 .back-to-top {
   position: fixed;
-  bottom: 20px;
+  bottom: 60px; /* Moved down */
   left: 50%;
   transform: translateX(-50%);
   width: 48px;
@@ -326,5 +326,6 @@ section {
 .back-to-top:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
+
 
 
