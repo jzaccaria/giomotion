@@ -4,29 +4,29 @@ function openModal(modalId) {
   if (modal) {
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    
-    // NUCLEAR OPTION: Completely rebuild the scroll gallery to force reset
+
     const scrollGallery = modal.querySelector('.scroll-gallery');
     if (scrollGallery) {
-      // Store the current HTML content
+      // Prevent scroll anchoring from interfering
+      scrollGallery.style.overflowAnchor = 'none';
+
+      // Rebuild scroll gallery to force reset
       const originalHTML = scrollGallery.innerHTML;
-      
-      // Clear and rebuild the gallery
       scrollGallery.innerHTML = '';
-      
-      // Force a reflow
-      scrollGallery.offsetHeight;
-      
-      // Restore the content
+      scrollGallery.offsetHeight; // Force reflow
       scrollGallery.innerHTML = originalHTML;
-      
-      // Ensure we're at the top
+
+      // Scroll to top immediately and after short delay (fallback)
       scrollGallery.scrollTop = 0;
-      
-      // Double-check after images load
       setTimeout(() => {
         scrollGallery.scrollTop = 0;
       }, 100);
+
+      // Debugging output (remove if not needed)
+      const images = scrollGallery.querySelectorAll('img');
+      images.forEach((img, index) => {
+        console.log(`Image ${index + 1}: ${img.getAttribute('src')}`);
+      });
     }
   }
 }
@@ -39,7 +39,7 @@ function closeModal(modalId) {
   }
 }
 
-// Optional: Close modal when clicking outside content
+// Optional: Close modal when clicking outside modal content
 window.addEventListener('click', function (e) {
   const aventuraModal = document.getElementById('aventuraModal');
   if (aventuraModal && e.target === aventuraModal) {
