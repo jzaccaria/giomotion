@@ -9,6 +9,27 @@ function openModal(modalId) {
   if (scrollGallery) {
     scrollGallery.scrollTop = 0;
 
+    const images = scrollGallery.querySelectorAll('img');
+    let loaded = 0;
+
+    images.forEach(img => {
+      if (img.complete) {
+        loaded++;
+      } else {
+        img.addEventListener('load', () => {
+          loaded++;
+          if (loaded === images.length) {
+            scrollGallery.scrollTo({ top: 0, behavior: 'auto' });
+          }
+        });
+      }
+    });
+
+    // Fallback in case all images were already loaded
+    if (loaded === images.length) {
+      scrollGallery.scrollTo({ top: 0, behavior: 'auto' });
+    }
+
     // Safety fallback after render
     setTimeout(() => {
       scrollGallery.scrollTo({ top: 0, behavior: 'auto' });
@@ -26,8 +47,4 @@ function closeModal(modalId) {
 
 // Optional: close modal when clicking outside the content
 window.addEventListener('click', (e) => {
-  const modal = document.getElementById('aventuraModal');
-  if (modal && e.target === modal) {
-    closeModal('aventuraModal');
-  }
-});
+  const modal =
