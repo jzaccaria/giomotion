@@ -124,7 +124,7 @@ section {
   margin-top: 0.5rem;
 }
 
-/* Modal */
+/* Modal - FIXED */
 .modal {
   display: none;
   position: fixed;
@@ -133,52 +133,66 @@ section {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden !important; /* Prevent modal itself from scrolling */
   background-color: rgba(0,0,0,0.9);
 }
 
 .modal-content {
   position: relative;
-  margin: auto;
-  max-width: 90%;
-  max-height: 90%;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
+  align-items: flex-start; /* Changed from center to flex-start */
   overflow: hidden;
 }
 
-/* Vertical Scroll Layout for Modal Images */
+/* Vertical Scroll Layout for Modal Images - FIXED */
 .scroll-gallery {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   padding: 2rem 1rem;
-  overflow-y: auto;
-  max-height: 90vh;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  max-height: 100vh !important;
+  width: 100%;
+  max-width: 90%;
+  scroll-behavior: auto !important; /* Disable smooth scrolling */
+  /* Remove any conflicting styles */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
 }
 
-/* ✅ Proper image sizing and spacing */
+.scroll-gallery::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Proper image sizing and spacing - FIXED */
 .scroll-gallery img {
-  max-width: 100%;
-  max-height: 80vh;
-  height: auto;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  margin-bottom: 2rem;
+  max-width: 100% !important;
+  max-height: 80vh !important;
+  height: auto !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin-bottom: 2rem !important;
+  /* Remove any overflow clipping on images */
+  overflow: visible !important;
 }
 
 /* Sticky header and circular close button */
 .modal-header {
-  position: sticky;
+  position: fixed !important; /* Changed from sticky to fixed */
   top: 0;
+  left: 0;
+  right: 0;
   background: rgba(0, 0, 0, 0.9);
   padding: 1rem;
   z-index: 1002;
   text-align: right;
+  pointer-events: none; /* Allow clicks through header */
 }
 
 .modal-header .close {
@@ -198,6 +212,7 @@ section {
   position: absolute;
   top: 20px;
   right: 20px;
+  pointer-events: auto; /* Re-enable clicks on close button */
 }
 
 .modal-header .close:hover {
@@ -249,16 +264,6 @@ section {
 .modal-close {
   top: 20px;
   right: 20px;
-}
-
-/* Hide scrollbar in scroll-gallery while preserving scroll functionality */
-.scroll-gallery {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
-}
-
-.scroll-gallery::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
 }
 
 /* Responsive tweaks */
