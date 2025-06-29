@@ -305,7 +305,7 @@ section {
 
 .back-to-top {
   position: fixed;
-  bottom: 100px; /* Moved down */
+  bottom: 60px; /* Moved down */
   left: 50%;
   transform: translateX(-50%);
   width: 48px;
