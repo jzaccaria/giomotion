@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project: Belmont Stakes</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .video-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .video-gallery iframe {
+      width: 100%;
+      max-width: 960px;
+      height: 540px;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Belmont Stakes</h1>
+    <nav>
+      <a href="index.html">Back to Main</a>
+    </nav>
+  </header>
+
+  <section class="video-gallery">
+    <iframe src="https://www.youtube.com/embed/35hx1V9Tcnw" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/FYAo4MNocvk" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/Ax1Yg0puMBw" allowfullscreen></iframe>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>John (Giovanni) Zaccaria<br />New York</p>
+    <a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a>
+    <a href="tel:+15169726345">(516) 972-6345</a>
+    <a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a>
+  </section>
+
+  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    ↑
+  </button>
+
+  <script>
+    const topBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        topBtn.style.opacity = '1';
+        topBtn.style.pointerEvents = 'auto';
+      } else {
+        topBtn.style.opacity = '0';
+        topBtn.style.pointerEvents = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
