@@ -5,15 +5,35 @@ function openModal(modalId) {
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
     
-    // The key fix: Reset scroll position of the scroll-gallery specifically
+    // Get the scroll gallery
     const scrollGallery = modal.querySelector('.scroll-gallery');
     if (scrollGallery) {
       // Force immediate scroll reset
       scrollGallery.scrollTop = 0;
       
-      // Double-check with requestAnimationFrame
+      // Additional force: temporarily change and restore the scroll behavior
+      const originalOverflow = scrollGallery.style.overflowY;
+      scrollGallery.style.overflowY = 'hidden';
+      
+      // Force reflow
+      scrollGallery.offsetHeight;
+      
+      // Restore overflow and reset scroll
+      scrollGallery.style.overflowY = originalOverflow || 'auto';
+      scrollGallery.scrollTop = 0;
+      
+      // Final backup with animation frame
       requestAnimationFrame(() => {
         scrollGallery.scrollTop = 0;
+        
+        // Also try scrolling the first image into view
+        const firstImage = scrollGallery.querySelector('img:first-child');
+        if (firstImage) {
+          firstImage.scrollIntoView({ 
+            block: 'start',
+            behavior: 'instant' 
+          });
+        }
       });
     }
   }
