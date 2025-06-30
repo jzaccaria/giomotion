@@ -2,63 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project: Belmont Stakes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belmont Stakes – Project</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .video-gallery {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-      padding: 2rem;
-    }
-
-    .video-gallery iframe {
-      width: 100%;
-      max-width: 960px;
-      height: 540px;
-      border: none;
-      border-radius: 10px;
-    }
-  </style>
 </head>
 <body>
 
   <header>
-    <h1>Belmont Stakes</h1>
+    <h1>John Zaccaria</h1>
     <nav>
-      <a href="index.html">Back to Main</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="video-gallery">
-    <iframe src="https://www.youtube.com/embed/35hx1V9Tcnw" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/FYAo4MNocvk" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/Ax1Yg0puMBw" allowfullscreen></iframe>
+  <section class="hero">
+    <iframe 
+      src="https://www.youtube.com/embed/35hx1V9Tcnw" 
+      title="Belmont Stakes 1" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
+  </section>
+
+  <section class="hero">
+    <iframe 
+      src="https://www.youtube.com/embed/FYAo4MNocvk" 
+      title="Belmont Stakes 2" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
+  </section>
+
+  <section class="hero">
+    <iframe 
+      src="https://www.youtube.com/embed/Ax1Yg0puMBw" 
+      title="Belmont Stakes 3" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>John (Giovanni) Zaccaria<br />New York</p>
+    <p>John (Giovanni) Zaccaria<br>New York</p>
     <a href="mailto:giovanni.zaccaria@me.com">giovanni.zaccaria@me.com</a>
-    <a href="tel:+15169726345">(516) 972-6345</a>
+    <a href="tel:5169726345">(516) 972-6345</a>
+    <br />
     <a href="https://www.linkedin.com/in/giovannizaccaria/" target="_blank">LinkedIn</a>
   </section>
 
-  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-    ↑
-  </button>
+  <div class="back-to-top" onclick="scrollToTop()">↑</div>
 
   <script>
-    const topBtn = document.querySelector('.back-to-top');
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Toggle visibility of back-to-top button
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 200) {
-        topBtn.style.opacity = '1';
-        topBtn.style.pointerEvents = 'auto';
+      const button = document.querySelector('.back-to-top');
+      if (window.scrollY > 300) {
+        button.style.opacity = '1';
+        button.style.pointerEvents = 'auto';
       } else {
-        topBtn.style.opacity = '0';
-        topBtn.style.pointerEvents = 'none';
+        button.style.opacity = '0';
+        button.style.pointerEvents = 'none';
       }
     });
   </script>
