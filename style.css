@@ -338,22 +338,28 @@ section {
   padding: 1rem 2rem;
 }
 
-/* Hamburger Button */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* Navigation Links */
+/* New: Reset default nav link display */
 .nav-links {
   display: flex;
   gap: 1rem;
 }
 
+/* Hamburger button */
+.hamburger {
+  display: none;
+  background: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -362,13 +368,13 @@ section {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #000;
+    background-color: #000;
     position: absolute;
-    top: 60px;
+    top: 100%;
     right: 2rem;
     padding: 1rem;
-    border: 1px solid #333;
     z-index: 998;
+    border: 1px solid #333;
   }
 
   .nav-links.nav-active {
@@ -376,10 +382,7 @@ section {
   }
 
   .sticky-header {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 }
-
-
-
-
