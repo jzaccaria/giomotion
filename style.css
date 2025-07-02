@@ -326,6 +326,59 @@ section {
   pointer-events: none;
 }
 
+/* Sticky Header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    right: 2rem;
+    padding: 1rem;
+    border: 1px solid #333;
+    z-index: 998;
+  }
+
+  .nav-links.nav-active {
+    display: flex;
+  }
+
+  .sticky-header {
+    flex-wrap: wrap;
+  }
+}
 
 
 
