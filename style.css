@@ -327,16 +327,62 @@ section {
 }
 
 /* Sticky Header */
+/* Sticky Header Layout */
 .sticky-header {
   position: sticky;
   top: 0;
   z-index: 999;
   background: #000;
   display: flex;
-  justify-content: space-between; /* 🔥 ensures left/right alignment */
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
 }
+
+/* Logo styling */
+.header-left h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Hamburger styling */
+.hamburger {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    padding: 1rem;
+    z-index: 998;
+    border: 1px solid #333;
+  }
+
+  .nav-links.nav-active {
+    display: flex;
+  }
+}
+
 
 /* Optional: remove wrapping on smaller screens */
 @media (max-width: 768px) {
