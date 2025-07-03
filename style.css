@@ -333,10 +333,22 @@ section {
   z-index: 999;
   background: #000;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* 🔥 ensures left/right alignment */
   align-items: center;
   padding: 1rem 2rem;
 }
+
+/* Optional: remove wrapping on smaller screens */
+@media (max-width: 768px) {
+  .sticky-header {
+    flex-wrap: nowrap; /* 🔥 keeps logo and hamburger on one row */
+  }
+
+  .nav-links {
+    right: 2rem; /* aligns dropdown under hamburger */
+  }
+}
+
 
 /* New: Reset default nav link display */
 .nav-links {
