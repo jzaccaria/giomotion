@@ -273,23 +273,6 @@ section {
 /* Responsive tweaks */
 
 
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    margin-top: 1rem;
-  }
-
-  .hero {
-    padding: 1rem;
-  }
-
-  .hero iframe {
-    height: 240px;
-  }
-}
 
 /* ✅ NEW: Center scroll-gallery horizontally using a wrapper */
 .scroll-gallery-wrapper {
@@ -385,6 +368,42 @@ section {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    background-color: #000;
+    padding: 1rem;
+    border: 1px solid #333;
+    z-index: 998;
+  }
+
+  .nav-links.nav-active {
+    display: flex;
+  }
+
+  .sticky-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 1rem;
+  }
+
+  .hero iframe {
+    height: 240px;
+  }
+
   .hamburger {
     display: block;
   }
