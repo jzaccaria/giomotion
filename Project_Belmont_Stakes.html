@@ -8,15 +8,16 @@
 </head>
 <body>
 
-  <header>
-    <h1>GioMotion</h1>
-    <nav>
-      <a href="index.html#work">Work</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+  <header class="sticky-header">
+  <h1 class="logo"><a href="index.html">GioMotion</a></h1>
+  <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+  <nav class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
 
   <section class="hero">
     <iframe 
@@ -73,6 +74,14 @@
       }
     });
   </script>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav-links');
+  hamburger?.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+  });
+</script>
 
 </body>
 </html>

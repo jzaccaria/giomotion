@@ -8,15 +8,16 @@
 </head>
 <body>
 
-  <header>
-    <h1><a href="index.html">GioMotion</a></h1>
-    <nav>
-      <a href="index.html#work">Work</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+  <header class="sticky-header">
+  <h1 class="logo"><a href="index.html">GioMotion</a></h1>
+  <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+  <nav class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
 
   <section id="project-ensora" class="project">
     <h2>Ensora Health Explainer Video</h2>
@@ -43,5 +44,13 @@
   <a href="#" class="back-to-top" title="Back to top">↑</a>
 
   <script src="script.js"></script>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav-links');
+  hamburger?.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+  });
+</script>
+
 </body>
 </html>
