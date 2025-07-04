@@ -76,7 +76,7 @@ section {
 }
 
 .thumbnail {
-  display: block; /* Make <a class="thumbnail"> behave like a div */
+  display: block;
   position: relative;
   border-radius: 5px;
   overflow: hidden;
@@ -127,14 +127,10 @@ section {
 }
 
 #contact {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-bottom: 100px; /* ✅ Add this */
+  padding-bottom: 100px;
 }
 
-
-/* Modal - FIXED */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -157,7 +153,6 @@ section {
   overflow: hidden;
 }
 
-/* Vertical Scroll Layout for Modal Images - FIXED */
 .scroll-gallery {
   display: flex;
   flex-direction: column;
@@ -179,7 +174,6 @@ section {
   display: none;
 }
 
-/* Proper image sizing and spacing - FIXED */
 .scroll-gallery img {
   max-width: 100% !important;
   max-height: 80vh !important;
@@ -191,7 +185,6 @@ section {
   overflow: visible !important;
 }
 
-/* Sticky header and circular close button */
 .modal-header {
   position: fixed !important;
   top: 0;
@@ -275,63 +268,7 @@ section {
   right: 20px;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .modal-arrow,
-  .modal-close {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    line-height: 40px;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    margin-top: 1rem;
-  }
-
-  .hero {
-    padding: 1rem;
-  }
-
-  .hero iframe {
-    height: 240px;
-  }
-}
-
-/* ✅ NEW: Center scroll-gallery horizontally using a wrapper */
-.scroll-gallery-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.back-to-top {
-  position: fixed;
-  bottom: 40px; /* 🔽 was 100px, now lowered to give space */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.15);
-  color: white;
-  font-size: 24px;
-  border: 2px solid white;
-  cursor: pointer;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
-  opacity: 0;
-  pointer-events: none;
-}
-
- Sticky Header */
+/* Sticky header */
 .sticky-header {
   position: sticky;
   top: 0;
@@ -340,25 +277,23 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 2rem; /* slightly increased for logo breathing room */
+  padding: 1rem 2rem;
+  height: auto;
   overflow: visible;
 }
 
-/* Logo image */
 .sticky-header img {
-  display: block;
-  max-height: 60px;  /* adjust as needed */
+  max-height: 60px;
   height: auto;
   vertical-align: middle;
 }
 
-/* Nav links (desktop) */
+/* Nav and Hamburger */
 .nav-links {
   display: flex;
   gap: 1rem;
 }
 
-/* Hamburger default (hidden on desktop) */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -370,149 +305,14 @@ section {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 2rem;
-    background-color: #000;
-    padding: 1rem;
-    border: 1px solid #333;
-    z-index: 998;
-  }
-
-  .nav-links.nav-active {
-    display: flex;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #000;
-    position: absolute;
-    top: 100%;
-    right: 2rem;
-    padding: 1rem;
-    z-index: 998;
-    border: 1px solid #333;
-  }
-
-  .nav-links.nav-active {
-    display: flex;
-  }
-}
-
-
-/* Optional: remove wrapping on smaller screens */
-@media (max-width: 768px) {
   .sticky-header {
-    flex-wrap: nowrap; /* 🔥 keeps logo and hamburger on one row */
-  }
-
-  .nav-links {
-    right: 2rem; /* aligns dropdown under hamburger */
-  }
-}
-
-
-/* New: Reset default nav link display */
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Hamburger button */
-.hamburger {
-  display: none;
-  color: black;
-  border: 2px solid black;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 36px;
-  cursor: pointer;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #000;
-    position: absolute;
-    top: 100%;
-    right: 2rem;
-    padding: 1rem;
-    z-index: 998;
-    border: 1px solid #333;
-  }
-
-  .nav-links.nav-active {
-    display: flex;
-  }
-
-  .sticky-header {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
   }
-}
 
-/* Sticky Header */
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  height: auto;
-}
-
-.sticky-header img {
-  max-height: 60px;
-  height: auto;
-  vertical-align: middle;
-}
-
-
-/* Logo */
-.logo {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-/* Nav links (desktop) */
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Hamburger icon (hidden on desktop) */
-/* Mobile styles */
-@media (max-width: 768px) {
   .hamburger {
     display: block;
-    margin-left: auto;     /* Push hamburger to the right */
+    margin-left: auto;
   }
 
   .nav-links {
@@ -529,11 +329,5 @@ section {
 
   .nav-links.nav-active {
     display: flex;
-  }
-
-  .sticky-header {
-    display: flex;         /* Make sure flex is re-enabled */
-    flex-wrap: wrap;       /* Allow wrapping for smaller screens */
-    align-items: center;
   }
 }
