@@ -481,14 +481,19 @@ section {
   top: 0;
   z-index: 999;
   background: #000;
-   display: block;
-  height: auto;
-  max-height: 60px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  
+  height: auto;
 }
+
+.sticky-header img {
+  max-height: 60px;
+  height: auto;
+  vertical-align: middle;
+}
+
 
 /* Logo */
 .logo {
