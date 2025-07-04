@@ -508,19 +508,11 @@ section {
 }
 
 /* Hamburger icon (hidden on desktop) */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
 /* Mobile styles */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+    margin-left: auto;     /* Push hamburger to the right */
   }
 
   .nav-links {
@@ -540,7 +532,8 @@ section {
   }
 
   .sticky-header {
-    flex-wrap: nowrap;
+    display: flex;         /* Make sure flex is re-enabled */
+    flex-wrap: wrap;       /* Allow wrapping for smaller screens */
     align-items: center;
   }
 }
