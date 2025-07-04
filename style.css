@@ -481,10 +481,13 @@ section {
   top: 0;
   z-index: 999;
   background: #000;
-  display: flex;
+   display: block;
+  height: auto;
+  max-height: 60px;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  
 }
 
 /* Logo */
